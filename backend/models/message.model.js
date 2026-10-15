@@ -14,7 +14,11 @@ message:{
 },
 image:{
     type:String  
-}
+},
+  unlockDate: {
+    type: Date, // 🎁 message kab unlock hoga
+    default: Date.now
+  }
 },{timestamps:true})
 
 const Message=mongoose.model("Message",messageSchema)

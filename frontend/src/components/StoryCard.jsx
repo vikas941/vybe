@@ -30,7 +30,7 @@ function StoryCard({storyData}) {
       <div className='flex items-center gap-[10px] absolute top-[30px] px-[10px]'>
          <MdOutlineKeyboardBackspace className='text-white cursor-pointer w-[25px]  h-[25px] ' onClick={() => navigate(`/`)} />
         <div className='w-[30px] h-[30px] md:w-[40px] md:h-[40px] border-2 border-black rounded-full cursor-pointer overflow-hidden' >
-                    <img src={storyData?.author?.profileImage || dp} alt="" className='w-full object-cover' />
+                    <img src={storyData?.author?.profileImage || dp} alt="" className='w-full h-full object-cover' />
                   </div>
                   <div className='w-[120px] font-semibold truncate text-white '>{storyData?.author?.userName}</div>
       </div>
@@ -58,7 +58,7 @@ function StoryCard({storyData}) {
                                
 
                                 <div className={`w-[30px] h-[30px]  border-2 border-black rounded-full cursor-pointer overflow-hidden ${index>0?`absolute left-[${index*10}px]`:""}`}>
-                                    <img src={viewer?.profileImage || dp} alt="" className='w-full object-cover' />
+                                    <img src={viewer?.profileImage || dp} alt="" className='w-full h-full object-cover' />
                                 </div>
                             ))}
 

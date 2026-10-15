@@ -46,6 +46,7 @@ export const signUp=async (req,res)=>{
 export const signIn=async (req,res)=>{
     try {
         const {password,userName}=req.body
+
        
          const user=await User.findOne({userName})
         if(!user){
@@ -70,7 +71,9 @@ export const signIn=async (req,res)=>{
         return res.status(200).json(user)
 
     } catch (error) {
+        console.log(error)
         return res.status(500).json({message:`signin error ${error}`})
+        
     }
 }
 

@@ -17,7 +17,7 @@ import { IoSendSharp } from "react-icons/io5";
 function LoopCard({ loop }) {
     const videoRef = useRef()
 const [isPlaying,setIsPlaying]=useState(true)
-const [isMute,setIsMute]=useState(true)
+const [isMute,setIsMute]=useState(false)
 const [progress,setProgress]=useState(0)
 const {userData}=useSelector(state=>state.user)
 const {socket}=useSelector(state=>state.socket)
@@ -149,7 +149,7 @@ if(showComment){
 <div className='w-full  flex flex-col gap-[5px] border-b-[1px] border-gray-800 justify-center pb-[10px] mt-[10px]'>
 <div className='flex justify-start items-center md:gap-[20px] gap-[10px]'>
           <div className='w-[30px] h-[30px] md:w-[40px] md:h-[40px] border-2 border-black rounded-full cursor-pointer overflow-hidden'>
-            <img src={com.author?.profileImage || dp} alt="" className='w-full object-cover' />
+            <img src={com.author?.profileImage || dp} alt="" className='w-full h-full object-cover' />
           </div>
           <div className='w-[150px] font-semibold text-white truncate'>{com.author?.userName}</div>
         </div>
@@ -159,7 +159,7 @@ if(showComment){
 </div>
  <div className='w-full fixed bottom-0 h-[80px] flex items-center justify-between px-[20px] py-[20px] '>
           <div className='w-[30px] h-[30px] md:w-[40px] md:h-[40px] border-2 border-black rounded-full cursor-pointer overflow-hidden '>
-            <img src={loop.author?.profileImage || dp} alt="" className='w-full object-cover ' />
+            <img src={loop.author?.profileImage || dp} alt="" className='w-full h-full object-cover ' />
           </div>
           <input type="text" className='px-[10px] border-b-2 border-b-gray-500 w-[90%] text-white placeholder:text-white outline-none h-[40px]' placeholder='Write comment...' onChange={(e)=>setMessage(e.target.value)} value={message}/>
           {message &&  <button className='absolute right-[20px] cursor-pointer' onClick={handleComment}><IoSendSharp className='w-[25px] h-[25px] text-white'/></button>}
@@ -169,7 +169,7 @@ if(showComment){
 
 
 
-            <video ref={videoRef} autoPlay muted loop src={loop?.media} className='w-full max-h-full' onClick={handleClick} onTimeUpdate={handleTimeUpdate} onDoubleClick={handleLikeOnDoubleClick}/>
+            <video ref={videoRef} autoPlay muted={isMute} loop src={loop?.media} className='w-full max-h-full' onClick={handleClick} onTimeUpdate={handleTimeUpdate} onDoubleClick={handleLikeOnDoubleClick}/>
             <div className='absolute top-[20px] z-[100] right-[20px] ' onClick={()=>setIsMute(prev=>!prev)}>
    {!isMute?<FiVolume2 className='w-[20px] h-[20px] text-white font-semibold'/>:<FiVolumeX className='w-[20px] h-[20px] text-white font-semibold'/>}
             </div>
@@ -181,7 +181,7 @@ if(showComment){
             <div className='w-full absolute h-[100px] bottom-[10px] p-[10px] flex flex-col gap-[10px]'>
 <div className='flex items-center gap-[5px]'>
           <div className='w-[30px] h-[30px] md:w-[40px] md:h-[40px] border-2 border-black rounded-full cursor-pointer overflow-hidden' >
-            <img src={loop.author?.profileImage || dp} alt="" className='w-full object-cover' />
+            <img src={loop.author?.profileImage || dp} alt="" className='w-full h-full object-cover' />
           </div>
           <div className='w-[120px] font-semibold truncate text-white '>{loop.author.userName}</div>
        

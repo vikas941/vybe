@@ -52,7 +52,7 @@ function Profile() {
             <div className='w-full h-[150px] flex items-start  gap-[20px] lg:gap-[50px] pt-[20px] px-[10px] justify-center'>
 
                 <div className='w-[80px] h-[80px] md:w-[140px] md:h-[140px] border-2 border-black rounded-full cursor-pointer overflow-hidden'>
-                    <img src={profileData?.profileImage || dp} alt="" className='w-full object-cover' />
+                    <img src={profileData?.profileImage || dp} alt="" className='w-full h-full object-cover' />
                 </div>
                 <div >
                     <div className='font-semibold text-[22px] text-white'>{profileData?.name}</div>
@@ -72,7 +72,7 @@ function Profile() {
                             {profileData?.followers?.slice(0, 3).map((user, index) => (
 
                                 <div className={`w-[40px] h-[40px]  border-2 border-black rounded-full cursor-pointer overflow-hidden ${index>0?`absolute left-[${index*9}px]`:""}`}>
-                                    <img src={user.profileImage || dp} alt="" className='w-full object-cover' />
+                                    <img src={user.profileImage || dp} alt="" className='w-full h-full object-cover' />
                                 </div>
                             ))}
 

@@ -70,7 +70,7 @@ const handleSignIn=async ()=>{
 
 <img src={logo1} alt="" className='w-[40%]'/>
 <p >Not Just A Platform , It's A VYBE</p>
-</div>
+</div>f
       </div>
     </div>
   )

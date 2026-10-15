@@ -17,7 +17,7 @@ function Nav() {
      <div onClick={()=>navigate("/upload")}><FiPlusSquare className='text-white cursor-pointer w-[25px] h-[25px]'/></div>
      <div onClick={()=>navigate("/loops")}><RxVideo className='text-white cursor-pointer w-[28px] h-[28px]'/></div>
      <div className='w-[40px] h-[40px] border-2 border-black rounded-full cursor-pointer overflow-hidden' onClick={()=>navigate(`/profile/${userData.userName}`)}>
-         <img src={userData.profileImage || dp} alt="" className='w-full object-cover'/>
+         <img src={userData.profileImage || dp} alt="" className='w-full h-full object-cover'/>
      </div>
     </div>
   )

@@ -13,7 +13,7 @@ function OnlineUser({user}) {
         navigate(`/messageArea`)
 
       }}>
-                <img src={user.profileImage || dp} alt="" className='w-full object-cover'/>
+                <img src={user.profileImage || dp} alt="" className='w-full h-full object-cover'/>
             </div>
 <div className='w-[10px] h-[10px] bg-[#0080ff] rounded-full absolute top-0 right-0'>
 
